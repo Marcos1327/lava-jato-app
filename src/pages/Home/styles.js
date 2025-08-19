@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: flex-start; /* separa o título dos botões */
   gap: 20px;
   padding: 10px 10px;
-  background-color: #60d3f0ff;
+  background-color: #ffffff;
 `
 export const Title = styled.h1`
         font-weight: 600;
