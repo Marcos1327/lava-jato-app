@@ -9,10 +9,10 @@ function Home() {
             <Title>Lava a Jato</Title>
             <ButtonGroup>
                 <Button onClick={() => Navigate('clientes')}>Clientes</Button>
-                <Button>Produtos</Button>
-                <Button>Veiculos</Button>
-                <Button>Servicos</Button>
-                <Button>Funcionarios</Button>
+                <Button onClick={() => Navigate('produtos')}>Produtos</Button>
+                <Button onClick={() => Navigate('veiculos')}>Veiculos</Button>
+                <Button onClick={() => Navigate('servicos')}>Servicos</Button>
+                <Button onClick={() => Navigate('funcionarios')}>Funcionarios</Button>
             </ButtonGroup>
         </Container>
     )
