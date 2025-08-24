@@ -8,6 +8,11 @@ export const Container = styled.div`
   padding: 10px 10px;
   background-color: #ffffff;
 `
+
+export const Logo = styled.div`
+        padding : 30px
+`
+
 export const Title = styled.h1`
         font-weight: 600;
         font-size: 2.5rem;
