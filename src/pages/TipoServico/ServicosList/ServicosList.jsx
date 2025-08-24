@@ -1,8 +1,13 @@
+import React from 'react';
+import Sidebar from '../../../components/Sidebar/Sidebar.jsx';
+
 function ServicosList() {
     return (
-        <div>
-            <h1>Lista de Serviços</h1>
-            {/* Aqui você pode adicionar a lógica para listar os serviços */}
+        <div className="container">
+            <Sidebar />
+            <div className="content">
+                <h1>Lista de Serviços</h1>
+            </div>
         </div>
     );
 }
