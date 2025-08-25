@@ -10,8 +10,11 @@
     <!-- Script para lidar com rotas do GitHub Pages -->
     <script type="text/javascript">
         (function (l) {
+            console.log("URL original:", l.href);
             if (l.search[1] === '/') {
+                console.log("A query começa com '/' → precisa ser ajustada");
                 var decoded = l.search.slice(1).split('&').map(function (s) {
+                    console.log("Query sem '?':", sliced);
                     return s.replace(/~and~/g, '&')
                 }).join('?');
                 window.history.replaceState(null, null,
