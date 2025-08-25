@@ -6,7 +6,7 @@ import DeleteIcon from '../../../assets/icon-delete-color.svg';
 import ProdutoModal from '../CriarProduto/CriarProduto.jsx';
 
 function ProdutoList() {
-    const produtos = [
+    const [produtos, setProdutos] = useState([
         {
             id: 1,
             nome: 'Notebook Dell Inspiron 15',
@@ -84,7 +84,7 @@ function ProdutoList() {
             estoque: 15,
             observacao: 'Modelo 2024, SSD 512GB'
         }
-    ];
+    ]);
 
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
@@ -104,6 +104,11 @@ function ProdutoList() {
 
     const handleCloseModal = () => {
         setIsModalOpen(false);
+    }
+
+    const handleSaveProduto = (novoProduto) => {
+        setProdutos(prev => [...prev, novoProduto]);
+        console.log(novoProduto);
     }
 
     return (
@@ -159,7 +164,7 @@ function ProdutoList() {
                     </div>
                 </div>
             </div>
-            <ProdutoModal isOpen={isModalOpen} onClose={handleCloseModal} />
+            <ProdutoModal isOpen={isModalOpen} onClose={handleCloseModal} onSave={handleSaveProduto} />
         </div>
     )
 }
