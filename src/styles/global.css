@@ -6,7 +6,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #e6f1fb;
+    background-color: #f4f7fa;
     color: #333;
+    -webkit-font-smoothing: antialiased;
 
 } 
