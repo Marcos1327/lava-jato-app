@@ -3,6 +3,7 @@ import './ProdutoList.css';
 import Sidebar from '../../../components/Sidebar/Sidebar.jsx';
 import UpdateIcon from '../../../assets/icon-edit-color.svg';
 import DeleteIcon from '../../../assets/icon-delete-color.svg';
+import ProdutoModal from '../CriarProduto/CriarProduto.jsx';
 
 function ProdutoList() {
     const produtos = [
@@ -87,6 +88,7 @@ function ProdutoList() {
 
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -96,12 +98,20 @@ function ProdutoList() {
         setItemsPerPage(Number(e.target.value));
     }
 
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    }
+
     return (
         <div className="produtos-page">
             <Sidebar />
             <div className="main-content">
                 <div className="produto-header">
-                    <button className="addButton">+ Adicionar Produto</button>
+                    <button className="addButton" onClick={handleOpenModal}>+ Adicionar Produto</button>
                 </div>
 
                 <div className="produtos-container">
@@ -149,6 +159,7 @@ function ProdutoList() {
                     </div>
                 </div>
             </div>
+            <ProdutoModal isOpen={isModalOpen} onClose={handleCloseModal} />
         </div>
     )
 }
