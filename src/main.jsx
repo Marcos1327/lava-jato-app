@@ -6,9 +6,11 @@ import './styles/global.css'
 import './assets/fonts/Poppins/fonts.css'
 import AppRoutes from './routes/AppRoutes';
 
+const basename = import.meta.env.BASE_URL
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <AppRoutes />
     </BrowserRouter>
   </StrictMode>,
