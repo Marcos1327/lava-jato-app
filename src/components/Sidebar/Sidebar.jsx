@@ -23,8 +23,8 @@ function Sidebar() {
             </div>
 
             <div className="button-group">
-                <NavLink to="/" className={({ isActive }) => isActive ? "button active" : "button"}><img src={AtendimentoIcon} alt="Atendimento" className="button-icon" />Atendimentos</NavLink>
-                <NavLink to="/" className={({ isActive }) => isActive ? "button active" : "button"}><img src={ArquivadosIcon} alt="Arquivados" className="button-icon" />Arquivados</NavLink>
+                <NavLink to="/atendimentos" className={({ isActive }) => isActive ? "button active" : "button"}><img src={AtendimentoIcon} alt="Atendimento" className="button-icon" />Atendimentos</NavLink>
+                <NavLink to="/arquivados" className={({ isActive }) => isActive ? "button active" : "button"}><img src={ArquivadosIcon} alt="Arquivados" className="button-icon" />Arquivados</NavLink>
                 <div className="divider" />
 
                 <NavLink to="/clientes" className={({ isActive }) => isActive ? "button active" : "button"}><img src={ClienteIcon} alt="Clientes" className="button-icon" />Clientes</NavLink>
@@ -33,8 +33,8 @@ function Sidebar() {
                 <NavLink to="/servicos" className={({ isActive }) => isActive ? "button active" : "button"}><img src={ServicoIcon} alt="Serviços" className="button-icon" />Serviços</NavLink>
                 <NavLink to="/funcionarios" className={({ isActive }) => isActive ? "button active" : "button"}><img src={FuncionarioIcon} alt="Funcionários" className="button-icon" />Funcionários</NavLink>
                 <div className="divider" />
-                <NavLink to="/" className={({ isActive }) => isActive ? "button active" : "button"}><img src={CaixaIcon} alt="Caixa" className="button-icon" />Caixa</NavLink>
-                <NavLink to="/" className={({ isActive }) => isActive ? "button active" : "button"}><img src={RelatorioIcon} alt="Relatório" className="button-icon" />Relatório</NavLink>
+                <NavLink to="/caixa" onClick={(e) => e.preventDefault()} style={{ opacity: 0.5, pointerEvents: "none" }} className={({ isActive }) => isActive ? "button active" : "button"}><img src={CaixaIcon} alt="Caixa" className="button-icon" />Caixa</NavLink>
+                <NavLink to="/relatorio" onClick={(e) => e.preventDefault()} style={{ opacity: 0.5, pointerEvents: "none" }} className={({ isActive }) => isActive ? "button active" : "button"}><img src={RelatorioIcon} alt="Relatório" className="button-icon" />Relatório</NavLink>
             </div>
 
             <div className="sidebar-footer">
