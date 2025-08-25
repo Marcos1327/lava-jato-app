@@ -9,37 +9,16 @@
 
     <!-- Script para lidar com rotas do GitHub Pages -->
     <script type="text/javascript">
-        (function (l) {
-            console.log("URL original:", l.href);
-
-            if (l.search[1] === '/') {
-                console.log("A query começa com '/' → precisa ser ajustada");
-
-                var sliced = l.search.slice(1);
-                console.log("Query sem '?':", sliced);
-
-                var parts = sliced.split('&');
-                console.log("Partes divididas por '&':", parts);
-
-                // Agora usando 'parts' diretamente dentro do map
-                var replaced = parts.map(function (s) {
-                    var fixed = s.replace(/~and~/g, '&');
-                    console.log("Revertendo ~and~ →", s, " => ", fixed);
-                    return fixed;
-                });
-
-                var decoded = replaced.join('?');
-                console.log("Query decodificada:", decoded);
-
-                var newUrl = l.pathname + decoded + l.hash;
-                console.log("Nova URL final:", newUrl);
-
-                window.history.replaceState(null, null, newUrl);
-                console.log("✅ URL substituída no navegador!");
-            } else {
-                console.log("Nada a corrigir, query não começa com '/'");
-            }
-        }(window.location))
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
     </script>
   <script type="module" crossorigin src="/lava-jato-app/assets/index-Bn7NkBNk.js"></script>
   <link rel="stylesheet" crossorigin href="/lava-jato-app/assets/index-IZhrqZoW.css">
